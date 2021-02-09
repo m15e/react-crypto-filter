@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 const CoinFilter = props => {
-  const { handleFilterChange, filter } = props;
+  const { handleFilter, filter } = props;
 
   const filters = [
     "Market Cap",
@@ -12,14 +12,16 @@ const CoinFilter = props => {
     "24h Price Change",
   ];
 
+  useEffect(() => {}, [filter]);
+
   return (
     <>
       <p>Filter Top 10 by:</p>
-      <select name="coinFilter">
+      <select name="coinFilter" onChange={e => handleFilter(e.target.value)}>
         <option value="All">All</option>
-        {filters.map(filter => (
-          <option key={filter} value={filter}>
-            {filter}
+        {filters.map(cat => (
+          <option key={cat} value={cat}>
+            {cat}
           </option>
         ))}
       </select>
@@ -27,4 +29,8 @@ const CoinFilter = props => {
   );
 };
 
-export default CoinFilter;
+const mapStateToProps = state => ({
+  filter: state.filter,
+});
+
+export default connect(mapStateToProps)(CoinFilter);

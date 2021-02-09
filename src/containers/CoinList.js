@@ -1,18 +1,23 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { fetchCoins } from "../actions";
+import { fetchCoins, changeFilter } from "../actions";
 import CoinFilter from "../components/CoinFilter";
 import Coin from "../components/Coin";
 
 export const CoinList = props => {
-  const { coins } = props;
+  const { coins, changeFilter } = props;
 
   useEffect(() => {
     props.fetchCoins();
   }, []);
 
-  console.log(coins);
+  // console.log(coins);
+
+  const handleFilter = filter => {
+    props.changeFilter(filter);
+    console.log(filter);
+  };
 
   const coinArr = coins.map(coin => (
     <Coin
@@ -27,7 +32,7 @@ export const CoinList = props => {
   return (
     <div className="coinList container">
       <h3>CoinList</h3>
-      <CoinFilter />
+      <CoinFilter handleFilter={handleFilter} />
       <div className="coin-container">{coinArr}</div>
     </div>
   );
@@ -40,6 +45,12 @@ export const CoinList = props => {
 
 const mapStateToProps = state => ({
   coins: state.coins.items,
+  filter: state.filter,
 });
 
-export default connect(mapStateToProps, { fetchCoins })(CoinList);
+const mapDispatchToProps = {
+  fetchCoins,
+  changeFilter,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CoinList); // add { fetchCoins, mapDispatchToProps } here later
