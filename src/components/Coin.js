@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 const Coin = props => {
@@ -11,6 +12,9 @@ const Coin = props => {
       </figure>
       <h3>{name}</h3>
       <p>{price}</p>
+      <Link to={`/coin/${id}`} className="button is-ghost is-small">
+        View Coin
+      </Link>
     </div>
   );
 };

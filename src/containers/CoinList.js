@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { fetchCoins, changeFilter } from "../actions";
 import CoinFilter from "../components/CoinFilter";
 import Coin from "../components/Coin";
+import filterMap from "../helpers/filterMap";
 
 export const CoinList = props => {
   const { coins, changeFilter, filter } = props;
@@ -11,16 +12,6 @@ export const CoinList = props => {
   useEffect(() => {
     props.fetchCoins();
   }, []);
-
-  const filterMap = filter => {
-    const mapping = {
-      "Dollar Value": "current_price",
-      "Market Cap": "market_cap",
-      "All Time High": "ath",
-    };
-
-    return mapping[filter];
-  };
 
   const handleFilter = filter => {
     console.log(`filter: ${filter}`);

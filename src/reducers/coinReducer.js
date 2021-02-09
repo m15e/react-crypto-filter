@@ -1,7 +1,8 @@
-import { FETCH_COINS } from "../actions/types";
+import { FETCH_COINS, GET_COIN } from "../actions/types";
 
 const initialState = {
   items: [],
+  item: {},
 };
 
 const coinReducer = (state = initialState, action) => {
@@ -10,6 +11,11 @@ const coinReducer = (state = initialState, action) => {
       return {
         ...state,
         items: action.payload,
+      };
+    case GET_COIN:
+      return {
+        ...state,
+        item: action.payload,
       };
     default:
       return state;

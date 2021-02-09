@@ -5,6 +5,7 @@ import rootReducer from "./reducers";
 const initialState = {
   coins: {
     items: [],
+    item: {},
   },
   filter: "Show All",
 };

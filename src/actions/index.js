@@ -1,4 +1,4 @@
-import { FETCH_COINS, CHANGE_FILTER } from "./types";
+import { FETCH_COINS, CHANGE_FILTER, GET_COIN } from "./types";
 
 export const fetchCoins = () => dispatch =>
   fetch(
@@ -6,6 +6,11 @@ export const fetchCoins = () => dispatch =>
   )
     .then(res => res.json())
     .then(coins => dispatch({ type: FETCH_COINS, payload: coins }));
+
+export const getCoin = id => dispatch =>
+  fetch(`https://api.coingecko.com/api/v3/coins/${id}`)
+    .then(res => res.json())
+    .then(coin => dispatch({ type: GET_COIN, payload: coin }));
 
 export const changeFilter = filter => dispatch =>
   dispatch({
