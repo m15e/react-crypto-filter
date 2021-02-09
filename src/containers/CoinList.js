@@ -25,10 +25,10 @@ export const CoinList = props => {
   ));
 
   return (
-    <div>
+    <div className="coinList container">
       <h3>CoinList</h3>
       <CoinFilter />
-      {coinArr}
+      <div className="coin-container">{coinArr}</div>
     </div>
   );
 };
