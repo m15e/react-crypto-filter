@@ -6,7 +6,7 @@ const initialState = {
   coins: {
     items: [],
   },
-  filter: "",
+  filter: "Show All",
 };
 
 const middleware = [thunk];

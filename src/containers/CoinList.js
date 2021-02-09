@@ -6,20 +6,41 @@ import CoinFilter from "../components/CoinFilter";
 import Coin from "../components/Coin";
 
 export const CoinList = props => {
-  const { coins, changeFilter } = props;
+  const { coins, changeFilter, filter } = props;
 
   useEffect(() => {
     props.fetchCoins();
   }, []);
 
-  // console.log(coins);
+  const filterMap = filter => {
+    const mapping = {
+      "Dollar Value": "current_price",
+      "Market Cap": "market_cap",
+      "All Time High": "ath",
+    };
+
+    return mapping[filter];
+  };
 
   const handleFilter = filter => {
+    console.log(`filter: ${filter}`);
     props.changeFilter(filter);
+
     console.log(filter);
   };
 
-  const coinArr = coins.map(coin => (
+  const sortBy = filterMap(filter);
+
+  const filteredCoins =
+    filter === "Show All"
+      ? coins
+      : coins
+          .sort((a, b) => parseFloat(b[sortBy]) - parseFloat(a[sortBy]))
+          .slice(0, 10);
+
+  console.log(filteredCoins);
+
+  const coinArr = filteredCoins.map(coin => (
     <Coin
       key={coin.id}
       id={coin.id}
@@ -53,4 +74,4 @@ const mapDispatchToProps = {
   changeFilter,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CoinList); // add { fetchCoins, mapDispatchToProps } here later
+export default connect(mapStateToProps, mapDispatchToProps)(CoinList);

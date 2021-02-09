@@ -18,7 +18,7 @@ const CoinFilter = props => {
     <>
       <p>Filter Top 10 by:</p>
       <select name="coinFilter" onChange={e => handleFilter(e.target.value)}>
-        <option value="All">All</option>
+        <option value="Show All">Show All</option>
         {filters.map(cat => (
           <option key={cat} value={cat}>
             {cat}
