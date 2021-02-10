@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchCoins, changeFilter } from '../../actions';
-import CoinFilter from '../../components/CoinFilter/CoinFilter';
-import Coin from '../../components/Coin/Coin';
-import filterMap from '../../helpers/filterMap';
+import { fetchCoins, changeFilter } from '../actions';
+import CoinFilter from '../components/CoinFilter';
+import Coin from '../components/Coin';
+import filterMap from '../helpers/filterMap';
 
 const CoinList = props => {
   const { coins, filter } = props;
