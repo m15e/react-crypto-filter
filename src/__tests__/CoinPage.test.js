@@ -1,9 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
-import CoinPage from '../components/CoinPage';
 import configureStore from 'redux-mock-store';
 import { BrowserRouter } from 'react-router-dom';
+import CoinPage from '../components/CoinPage';
 
 const mockStore = configureStore();
 
@@ -16,7 +16,7 @@ const store = mockStore({
         small: 'https://assets.coingecko.com/coins/images/1/large/bitcoin.png',
       },
       description: {
-        en: 'All about coins'
+        en: 'All about coins',
       },
       market_data: {
         current_price: {
@@ -26,16 +26,17 @@ const store = mockStore({
           usd: 1,
         },
         market_cap: {
-          usd: 1
+          usd: 1,
         },
         price_change_percentage_24h: 12,
         price_change_percentage_7d: 12,
         price_change_percentage_30d: 12,
         price_change_percentage_200d: 12,
         price_change_percentage_1y: 12,
-      }
+      },
     },
-}});
+  },
+});
 
 it('CoinPage matches Snapshot', () => {
   const tree = renderer
@@ -43,5 +44,3 @@ it('CoinPage matches Snapshot', () => {
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
-
-

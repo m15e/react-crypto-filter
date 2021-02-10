@@ -1,5 +1,6 @@
 #root {
-  padding-top: 10vh; }
+  padding-top: 10vh;
+}
 
 #root::before {
   content: "CryptoScan";
@@ -7,40 +8,59 @@
   font-size: 2rem;
   position: absolute;
   left: 40.5vw;
-  top: 3vh; }
+  top: 3vh;
+}
 
 .tile.is-4 {
   float: left;
   border-radius: 0;
-  padding: 20px; }
+  padding: 20px;
+}
 
 .filter-container {
-  margin: 15px 0; }
-  .filter-container p {
-    float: right; }
+  margin: 15px 0;
+}
+
+.filter-container p {
+  float: right;
+}
 
 .coin figure {
-  float: right; }
+  float: right;
+}
+
 .coin h3 {
-  margin: 5px 0 15px; }
+  margin: 5px 0 15px;
+}
+
 .coin span {
-  font-size: 12px; }
+  font-size: 12px;
+}
+
 .coin .view-coin {
-  float: right; }
+  float: right;
+}
 
 .coin-page-content {
-  margin: 5vh auto; }
-  .coin-page-content .pm-title-col {
-    padding: 0 0.75rem; }
-  .coin-page-content .price-movement span {
-    text-align: right; }
-  .coin-page-content .back-btn {
-    position: fixed;
-    top: 5vh;
-    right: 5vw; }
+  margin: 5vh auto;
+}
+
+.coin-page-content .pm-title-col {
+  padding: 0 0.75rem;
+}
+
+.coin-page-content .price-movement span {
+  text-align: right;
+}
+
+.coin-page-content .back-btn {
+  position: fixed;
+  top: 5vh;
+  right: 5vw;
+}
 
 @media screen and (max-width: 1000px) {
   .tile.is-4 {
-    width: 50%; } }
-
-/*# sourceMappingURL=App.css.map */
+    width: 50%;
+  }
+}
