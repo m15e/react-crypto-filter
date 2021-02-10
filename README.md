@@ -9,7 +9,7 @@
 
 ## Live Link
 
-[Open Live](https://m15e.me)
+[Open Live](https://crypto-react-scanr.herokuapp.com/)
 
 ## Built With
 
