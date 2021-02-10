@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import numeral from 'numeral';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getCoin } from '../../actions';
+import { getCoin } from '../actions';
 
 const CoinPage = props => {
   const { coin, getCoin } = props;

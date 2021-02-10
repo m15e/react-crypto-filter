@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CoinIndex matches Snapshot 1`] = `
+<div
+  className="coin-index"
+>
+  <div
+    className="coinList container"
+  >
+    <div
+      className="container filter-container"
+    >
+      <div
+        className="columns"
+      >
+        <div
+          className="column"
+        >
+          <p>
+            Filter Top 10 by:
+          </p>
+        </div>
+        <div
+          className="column"
+        >
+          <select
+            name="coinFilter"
+            onChange={[Function]}
+          >
+            <option
+              value="Show All"
+            >
+              Show All
+            </option>
+            <option
+              value="Market Cap"
+            >
+              Market Cap
+            </option>
+            <option
+              value="Dollar Value"
+            >
+              Dollar Value
+            </option>
+            <option
+              value="All Time High"
+            >
+              All Time High
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div
+      className="coin-container"
+    >
+      <div
+        className="coin tile is-child box is-4"
+        id="bitcoin"
+      >
+        <figure
+          className="image is-64x64 coin-logo"
+        >
+          <img
+            alt="Bitcoin"
+            className="is-rounded"
+            src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579"
+          />
+        </figure>
+        <h3
+          className="title is-5"
+        >
+          Bitcoin
+        </h3>
+        <p>
+          <span>
+            Market Capitalization
+          </span>
+          <br />
+          $830,911,434,449.00
+        </p>
+        <p>
+          <span>
+            Current Price
+          </span>
+          <br />
+          $44,497.00
+        </p>
+        <p>
+          <span>
+            All Time High
+          </span>
+          <br />
+          $48,025.00
+        </p>
+        <a
+          className="view-coin button is-ghost is-small"
+          href="/coin/bitcoin"
+          onClick={[Function]}
+        >
+          View Coin
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
