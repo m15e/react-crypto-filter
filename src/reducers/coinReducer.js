@@ -1,4 +1,4 @@
-import { FETCH_COINS, GET_COIN } from "../actions/types";
+import { FETCH_COINS, GET_COIN } from '../actions/types';
 
 const initialState = {
   items: [],

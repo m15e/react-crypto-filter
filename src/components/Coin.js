@@ -1,10 +1,11 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const Coin = props => {
-  const { id, name, price, img } = props;
+  const {
+    id, name, price, img,
+  } = props;
   return (
     <div className="coin tile is-child box is-4" id={id}>
       <figure className="image is-64x64 coin-logo">
@@ -17,6 +18,13 @@ const Coin = props => {
       </Link>
     </div>
   );
+};
+
+Coin.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,  
+  img: PropTypes.string.isRequired,
 };
 
 export default Coin;

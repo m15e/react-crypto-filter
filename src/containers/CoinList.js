@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { fetchCoins, changeFilter } from "../actions";
-import CoinFilter from "../components/CoinFilter";
-import Coin from "../components/Coin";
-import filterMap from "../helpers/filterMap";
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { fetchCoins, changeFilter } from '../actions';
+import CoinFilter from '../components/CoinFilter';
+import Coin from '../components/Coin';
+import filterMap from '../helpers/filterMap';
 
 export const CoinList = props => {
-  const { coins, changeFilter, filter } = props;
+  const { coins, filter } = props;
 
   useEffect(() => {
     props.fetchCoins();
@@ -19,12 +19,11 @@ export const CoinList = props => {
 
   const sortBy = filterMap(filter);
 
-  const filteredCoins =
-    filter === "Show All"
-      ? coins
-      : coins
-          .sort((a, b) => parseFloat(b[sortBy]) - parseFloat(a[sortBy]))
-          .slice(0, 10);
+  const filteredCoins = filter === 'Show All'
+    ? coins
+    : coins
+      .sort((a, b) => parseFloat(b[sortBy]) - parseFloat(a[sortBy]))
+      .slice(0, 10);
 
   console.log(filteredCoins);
 
@@ -50,7 +49,8 @@ export const CoinList = props => {
 CoinList.propTypes = {
   fetchCoins: PropTypes.func.isRequired,
   changeFilter: PropTypes.func.isRequired,
-  coins: PropTypes.array.isRequired,
+  coins: PropTypes.arrayOf(PropTypes.object).isRequired,
+  filter: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({

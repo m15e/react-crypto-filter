@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 const CoinFilter = props => {
   const { handleFilter, filter } = props;
 
   const filters = [
-    "Market Cap",
-    "Dollar Value",
-    "All Time High",
-    "24h Price Change",
+    'Market Cap',
+    'Dollar Value',
+    'All Time High',
+    '24h Price Change',
   ];
 
   useEffect(() => {}, [filter]);
@@ -27,6 +27,11 @@ const CoinFilter = props => {
       </select>
     </>
   );
+};
+
+CoinFilter.propTypes = {
+  filter: PropTypes.string.isRequired,
+  handleFilter: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({

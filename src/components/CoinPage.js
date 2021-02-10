@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
-import PropTypes from "prop-types";
-import { getCoin } from "../actions";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { getCoin } from '../actions';
 
 const CoinPage = props => {
   const { coin, getCoin } = props;
 
-  const coin_id = window.location.href.split("/coin/").splice(1).toString();
+  const coin_id = window.location.href.split('/coin/').splice(1).toString();
 
   useEffect(() => {
     props.getCoin(coin_id);
