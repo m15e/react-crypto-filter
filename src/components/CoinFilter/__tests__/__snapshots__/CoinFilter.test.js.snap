@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Coin component matches snapshot 1`] = `
+<div
+  className="container filter-container"
+>
+  <div
+    className="columns"
+  >
+    <div
+      className="column"
+    >
+      <p>
+        Filter Top 10 by:
+      </p>
+    </div>
+    <div
+      className="column"
+    >
+      <select
+        name="coinFilter"
+        onChange={[Function]}
+      >
+        <option
+          value="Show All"
+        >
+          Show All
+        </option>
+        <option
+          value="Market Cap"
+        >
+          Market Cap
+        </option>
+        <option
+          value="Dollar Value"
+        >
+          Dollar Value
+        </option>
+        <option
+          value="All Time High"
+        >
+          All Time High
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
+`;

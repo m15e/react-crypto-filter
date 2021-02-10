@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "canvas": "^2.6.1",
     "eslint": "^7.17.0",
     "eslint-config-airbnb": "^18.2.1",
     "numeral": "^2.0.6",
@@ -17,6 +18,7 @@
     "react-scripts": "4.0.2",
     "react-test-renderer": "^17.0.1",
     "redux": "^4.0.5",
+    "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.3.0",
     "stylelint": "^13.8.0"
   },

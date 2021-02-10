@@ -1,4 +1,14 @@
-.App {
+#root {
+  padding-top: 10vh;
+}
+
+#root::before {
+  content: "CryptoScan";
+  font-family: "Lexend Mega", sans-serif;
+  font-size: 2rem;
+  position: absolute;
+  left: 40.5vw;
+  top: 3vh;
 }
 
 .tile.is-4 {
@@ -32,7 +42,7 @@
 }
 
 .coin-page-content {
-  margin: 10vh auto;
+  margin: 5vh auto;
 
   .pm-title-col {
     padding: 0 0.75rem;

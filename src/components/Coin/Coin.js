@@ -40,13 +40,22 @@ const Coin = props => {
   );
 };
 
+Coin.defaultProps = {
+  id: 'coinId',
+  name: 'coin',
+  price: 1,
+  allTimeHigh: 1,
+  img: 'https://assets.coingecko.com/coins/images/1/large/bitcoin.png',
+  marketCap: 1,
+};
+
 Coin.propTypes = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  allTimeHigh: PropTypes.number.isRequired,
-  img: PropTypes.string.isRequired,
-  marketCap: PropTypes.number.isRequired,
+  id: PropTypes.string,
+  name: PropTypes.string,
+  price: PropTypes.number,
+  allTimeHigh: PropTypes.number,
+  img: PropTypes.string,
+  marketCap: PropTypes.number,
 };
 
 export default Coin;

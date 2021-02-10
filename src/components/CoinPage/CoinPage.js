@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import numeral from 'numeral';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getCoin } from '../actions';
+import { getCoin } from '../../actions';
 
 const CoinPage = props => {
   const { coin, getCoin } = props;
@@ -135,7 +135,9 @@ CoinPage.propTypes = {
       en: PropTypes.string.isRequired,
     }),
     market_data: PropTypes.shape({
-      current_price: PropTypes.number.isRequired,
+      current_price: PropTypes.shape({
+        usd: PropTypes.number.isRequired,
+      }),
       ath: PropTypes.shape({
         usd: PropTypes.number.isRequired,
       }),
