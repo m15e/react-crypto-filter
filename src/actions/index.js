@@ -1,7 +1,7 @@
 import { FETCH_COINS, CHANGE_FILTER, GET_COIN } from './types';
 
 export const fetchCoins = () => dispatch => fetch(
-  "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=30&price_change_percentage='24h,7d,30d,200d,1y'",
+  "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=volume_desc&per_page=30&price_change_percentage='24h,7d,30d,200d,1y'",
 )
   .then(res => res.json())
   .then(coins => dispatch({ type: FETCH_COINS, payload: coins }));
