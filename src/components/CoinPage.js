@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { getCoin } from "../actions";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 const CoinPage = props => {
@@ -15,6 +16,9 @@ const CoinPage = props => {
   return (
     <div className="coin-page">
       <p>{coin.symbol}</p>
+      <Link exact to="/">
+        Back
+      </Link>
     </div>
   );
 };

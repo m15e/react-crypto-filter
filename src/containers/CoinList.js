@@ -14,10 +14,7 @@ export const CoinList = props => {
   }, []);
 
   const handleFilter = filter => {
-    console.log(`filter: ${filter}`);
     props.changeFilter(filter);
-
-    console.log(filter);
   };
 
   const sortBy = filterMap(filter);
@@ -50,10 +47,11 @@ export const CoinList = props => {
   );
 };
 
-// CoinList.propTypes = {
-//   fetchCoins: PropTypes.func.isRequired,
-//   coins: PropTypes.array.isRequired,
-// };
+CoinList.propTypes = {
+  fetchCoins: PropTypes.func.isRequired,
+  changeFilter: PropTypes.func.isRequired,
+  coins: PropTypes.array.isRequired,
+};
 
 const mapStateToProps = state => ({
   coins: state.coins.items,

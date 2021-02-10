@@ -1,17 +1,10 @@
-.App {
-}
-
 .tile.is-4 {
   float: left;
   border-radius: 0;
-  padding: 15px;
-}
-
-.coin-logo {
-}
+  padding: 15px; }
 
 @media screen and (max-width: 1000px) {
   .tile.is-4 {
-    width: 50%;
-  }
-}
+    width: 50%; } }
+
+/*# sourceMappingURL=App.css.map */
