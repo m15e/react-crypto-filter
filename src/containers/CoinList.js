@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { fetchCoins, changeFilter } from '../actions';
-import CoinFilter from '../components/CoinFilter';
-import Coin from '../components/Coin';
-import filterMap from '../helpers/filterMap';
+import React, { useEffect } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { fetchCoins, changeFilter } from "../actions";
+import CoinFilter from "../components/CoinFilter";
+import Coin from "../components/Coin";
+import filterMap from "../helpers/filterMap";
 
 export const CoinList = props => {
   const { coins, filter } = props;
@@ -19,19 +19,20 @@ export const CoinList = props => {
 
   const sortBy = filterMap(filter);
 
-  const filteredCoins = filter === 'Show All'
-    ? coins
-    : coins
-      .sort((a, b) => parseFloat(b[sortBy]) - parseFloat(a[sortBy]))
-      .slice(0, 10);
-
-  console.log(filteredCoins);
+  const filteredCoins =
+    filter === "Show All"
+      ? coins
+      : coins
+          .sort((a, b) => parseFloat(b[sortBy]) - parseFloat(a[sortBy]))
+          .slice(0, 10);
 
   const coinArr = filteredCoins.map(coin => (
     <Coin
       key={coin.id}
       id={coin.id}
       name={coin.name}
+      market_cap={coin.market_cap}
+      all_time_high={coin.ath}
       price={coin.current_price}
       img={coin.image}
     />
@@ -39,7 +40,6 @@ export const CoinList = props => {
 
   return (
     <div className="coinList container">
-      <h3>CoinList</h3>
       <CoinFilter handleFilter={handleFilter} />
       <div className="coin-container">{coinArr}</div>
     </div>

@@ -1,17 +1,35 @@
-.App {
-}
-
 .tile.is-4 {
   float: left;
   border-radius: 0;
-  padding: 15px;
-}
+  padding: 20px; }
 
-.coin-logo {
-}
+.filter-container {
+  margin: 15px 0; }
+  .filter-container p {
+    float: right; }
+
+.coin figure {
+  float: right; }
+.coin h3 {
+  margin: 5px 0 15px; }
+.coin span {
+  font-size: 12px; }
+.coin .view-coin {
+  float: right; }
+
+.coin-page-content {
+  margin: 10vh auto; }
+  .coin-page-content .pm-title-col {
+    padding: 0 0.75rem; }
+  .coin-page-content .price-movement span {
+    text-align: right; }
+  .coin-page-content .back-btn {
+    position: fixed;
+    top: 5vh;
+    right: 5vw; }
 
 @media screen and (max-width: 1000px) {
   .tile.is-4 {
-    width: 50%;
-  }
-}
+    width: 50%; } }
+
+/*# sourceMappingURL=App.css.map */
