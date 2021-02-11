@@ -7,6 +7,11 @@
 ![](./screenshots/screen-home.png)
 ![](./screenshots/screen-coin.png)
 
+## Video Presentation Links
+
+[Part 1](https://www.loom.com/share/bcefbf0fe1cb4ba396e3afc190b6e244)
+[Part 2](https://www.loom.com/share/d7a6b699955943d0a8aa46935bbde649)
+
 ## Live Link
 
 [Open Live](https://crypto-react-scanr.herokuapp.com/)
