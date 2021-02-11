@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import CoinIndex from './containers/CoinIndex';
-import CoinPage from './components/CoinPage';
+import CoinIndex from './components/CoinIndex';
+import CoinPage from './containers/CoinPage';
 
 const Routes = () => (
   <BrowserRouter>

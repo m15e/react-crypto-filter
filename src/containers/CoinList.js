@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { fetchCoins, changeFilter } from '../actions';
-import CoinFilter from '../components/CoinFilter';
-import Coin from '../components/Coin';
-import filterMap from '../helpers/filterMap';
+import React, { useEffect } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { fetchCoins, changeFilter, changeSearch } from "../actions";
+import CoinFilter from "./CoinFilter";
+import Coin from "../components/Coin";
+import filterMap from "../helpers/filterMap";
 
 const CoinList = props => {
   const { coins, filter } = props;
@@ -19,13 +19,24 @@ const CoinList = props => {
 
   const sortBy = filterMap(filter);
 
-  const filteredCoins = filter === 'Show All'
-    ? coins
-    : coins
-      .sort((a, b) => parseFloat(b[sortBy]) - parseFloat(a[sortBy]))
-      .slice(0, 10);
+  const filteredCoins =
+    filter["filter"] === "Show All"
+      ? coins
+      : coins
+          .sort((a, b) => parseFloat(b[sortBy]) - parseFloat(a[sortBy]))
+          .slice(0, 10);
 
-  const coinArr = filteredCoins.map(coin => (
+  const handleSearch = search => {
+    console.log(filter["search"].length);
+    props.changeSearch(search);
+  };
+
+  const searchedCoins =
+    filter["search"].length === 0
+      ? filteredCoins
+      : filteredCoins.filter(coin => coin.id.includes(filter["search"]));
+
+  const coinArr = searchedCoins.map(coin => (
     <Coin
       key={coin.id}
       id={coin.id}
@@ -39,7 +50,7 @@ const CoinList = props => {
 
   return (
     <div className="coinList container">
-      <CoinFilter handleFilter={handleFilter} />
+      <CoinFilter handleFilter={handleFilter} handleSearch={handleSearch} />
       <div className="coin-container">{coinArr}</div>
     </div>
   );
@@ -49,7 +60,7 @@ CoinList.propTypes = {
   fetchCoins: PropTypes.func.isRequired,
   changeFilter: PropTypes.func.isRequired,
   coins: PropTypes.arrayOf(PropTypes.object).isRequired,
-  filter: PropTypes.string.isRequired,
+  filter: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -60,6 +71,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
   fetchCoins,
   changeFilter,
+  changeSearch,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CoinList);

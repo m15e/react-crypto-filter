@@ -1,5 +1,5 @@
 import '../App.css';
-import CoinList from './CoinList';
+import CoinList from '../containers/CoinList';
 
 function CoinIndex() {
   return (

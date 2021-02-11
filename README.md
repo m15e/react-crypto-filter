@@ -34,6 +34,10 @@ To get a local copy up and running follow these simple example steps.
 3.  Next open run `npm i` to install necessary packages and dependencies.
 4.  Once the installation is complete run `npm start` to start the application.
 
+### Testing
+
+To run tests enter `npm test` into the commandline.
+
 ## Authors
 
 👤 **Mark Rode**
