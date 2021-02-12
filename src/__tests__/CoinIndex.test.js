@@ -15,17 +15,25 @@ const store = mockStore({
         id: 'bitcoin',
         symbol: 'btc',
         name: 'Bitcoin',
-        image: 'https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579',
+        image:
+          'https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579',
         current_price: 44497,
         market_cap: 830911434449,
         ath: 48025,
-      }],
+      },
+    ],
   },
 });
 
 it('CoinIndex matches Snapshot', () => {
   const tree = renderer
-    .create(<BrowserRouter><Provider store={store}><CoinIndex /></Provider></BrowserRouter>)
+    .create(
+      <BrowserRouter>
+        <Provider store={store}>
+          <CoinIndex />
+        </Provider>
+      </BrowserRouter>,
+    )
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

@@ -40,7 +40,13 @@ const store = mockStore({
 
 it('CoinPage matches Snapshot', () => {
   const tree = renderer
-    .create(<BrowserRouter><Provider store={store}><CoinPage /></Provider></BrowserRouter>)
+    .create(
+      <BrowserRouter>
+        <Provider store={store}>
+          <CoinPage />
+        </Provider>
+      </BrowserRouter>,
+    )
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

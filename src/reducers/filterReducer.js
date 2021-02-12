@@ -1,4 +1,4 @@
-import { CHANGE_FILTER, CHANGE_SEARCH } from "../actions/types";
+import { CHANGE_FILTER, CHANGE_SEARCH } from '../actions/types';
 
 const filterReducer = (state = {}, action) => {
   switch (action.type) {

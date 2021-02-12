@@ -8,14 +8,16 @@ import CoinFilter from '../components/CoinFilter';
 const mockStore = configureStore();
 
 const store = mockStore({
-  filter: 'Show All',
+  filter: ['Show All', ''],
 });
 
 it('CoinFilter matches Snapshot', () => {
   const tree = renderer
     .create(
       <BrowserRouter>
-        <Provider store={store}><CoinFilter handleFilter={Function} /></Provider>
+        <Provider store={store}>
+          <CoinFilter handleFilter={Function} />
+        </Provider>
       </BrowserRouter>,
     )
     .toJSON();
