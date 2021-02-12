@@ -17,6 +17,27 @@ exports[`CoinIndex matches Snapshot 1`] = `
           className="column"
         >
           <p>
+            Search:
+          </p>
+        </div>
+        <div
+          className="column"
+        >
+          <input
+            name="search"
+            onChange={[Function]}
+            placeholder="Enter Coin Name"
+            type="text"
+          />
+        </div>
+      </div>
+      <div
+        className="columns"
+      >
+        <div
+          className="column"
+        >
+          <p>
             Filter Top 10 by:
           </p>
         </div>

@@ -20,6 +20,7 @@ const CoinFilter = props => {
             type="text"
             name="search"
             onChange={e => handleSearch(e.target.value)}
+            placeholder="Enter Coin Name"
           />
         </div>
       </div>
@@ -45,15 +46,11 @@ const CoinFilter = props => {
   );
 };
 
-CoinFilter.defaultProps = {
-  filter: { search: '' },
-};
-
 CoinFilter.propTypes = {
-  filter: PropTypes.Shape({
+  filter: PropTypes.shape({
     filter: PropTypes.string.isRequired,
-    search: PropTypes.string,
-  }),
+    search: PropTypes.string.isRequired,
+  }).isRequired,
   handleFilter: PropTypes.func.isRequired,
   handleSearch: PropTypes.func.isRequired,
 };

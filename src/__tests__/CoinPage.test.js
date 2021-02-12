@@ -1,11 +1,15 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
+import '@testing-library/jest-dom';
 import configureStore from 'redux-mock-store';
 import { BrowserRouter } from 'react-router-dom';
-import CoinPage from '../components/CoinPage';
+import CoinPage from '../containers/CoinPage';
+import thunk from 'redux-thunk';
+import { render } from '@testing-library/react';
 
-const mockStore = configureStore();
+const middleware = [thunk];
+const mockStore = configureStore(middleware);
 
 const store = mockStore({
   coins: {
@@ -45,8 +49,42 @@ it('CoinPage matches Snapshot', () => {
         <Provider store={store}>
           <CoinPage />
         </Provider>
-      </BrowserRouter>,
+      </BrowserRouter>
     )
     .toJSON();
   expect(tree).toMatchSnapshot();
+});
+
+describe('CoinPage rendering tests', () => {
+  let component;
+
+  beforeEach(() => {
+    component = render(
+      <BrowserRouter>
+        <Provider store={store}>
+          <CoinPage />
+        </Provider>
+      </BrowserRouter>
+    );
+  });
+
+  it('displays the current price header', () => {
+    const header = document.querySelector('.pm-title-col strong');
+    expect(header).toBeInTheDocument();
+  });
+
+  it('displays the return link', () => {
+    const link = document.querySelector('.back-btn');
+    expect(link.innerHTML).toEqual('Back to Index');
+  });
+
+  it('displays the description title', () => {
+    const title = document.querySelector('.title.is-4');
+    expect(title.innerHTML).toEqual('About');
+  });
+
+  it('the coin symbol is displayed in all caps', () => {
+    const symbol = document.querySelector('.symbol');
+    expect(symbol).not.toBe('BTC');
+  });
 });

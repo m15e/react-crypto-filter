@@ -3,12 +3,11 @@ import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import { BrowserRouter } from 'react-router-dom';
-import CoinIndex from '../containers/CoinIndex';
+import CoinIndex from '../components/CoinIndex';
 
 const mockStore = configureStore();
 
 const store = mockStore({
-  filter: 'Show All',
   coins: {
     items: [
       {
@@ -23,6 +22,10 @@ const store = mockStore({
       },
     ],
   },
+  filter: {
+    filter: 'Show All',
+    search: '',
+  },
 });
 
 it('CoinIndex matches Snapshot', () => {
@@ -32,7 +35,7 @@ it('CoinIndex matches Snapshot', () => {
         <Provider store={store}>
           <CoinIndex />
         </Provider>
-      </BrowserRouter>,
+      </BrowserRouter>
     )
     .toJSON();
   expect(tree).toMatchSnapshot();

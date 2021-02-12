@@ -25,9 +25,7 @@ const CoinPage = props => {
       </>
     );
   }
-  const price$ = numeral(coin.market_data.current_price.usd).format(
-    '$0,0.00',
-  );
+  const price$ = numeral(coin.market_data.current_price.usd).format('$0,0.00');
   const mrktCap$ = numeral(coin.market_data.market_cap.usd).format('$0,0.00');
   const allTime$ = numeral(coin.market_data.ath.usd).format('$0,0.00');
   const description = coin.description.en.replace(/(<([^>]+)>)/gi, '');
@@ -71,7 +69,7 @@ const CoinPage = props => {
               </p>
             </div>
             <div className="column">
-              <p>
+              <p className="symbol">
                 <span>Symbol:</span>
                 <br />
                 {symbol}
