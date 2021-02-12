@@ -6,7 +6,7 @@ import configureStore from 'redux-mock-store';
 import { BrowserRouter } from 'react-router-dom';
 import CoinPage from '../containers/CoinPage';
 import thunk from 'redux-thunk';
-import { render } from '@testing-library/react';
+import { getByAltText, render } from '@testing-library/react';
 
 const middleware = [thunk];
 const mockStore = configureStore(middleware);
@@ -57,7 +57,6 @@ it('CoinPage matches Snapshot', () => {
 
 describe('CoinPage rendering tests', () => {
   let component;
-
   beforeEach(() => {
     component = render(
       <BrowserRouter>
@@ -86,5 +85,11 @@ describe('CoinPage rendering tests', () => {
   it('the coin symbol is displayed in all caps', () => {
     const symbol = document.querySelector('.symbol');
     expect(symbol).not.toBe('BTC');
+  });
+
+  it('shows the image alternative text for SEO', () => {
+    const { getByAltText } = component;
+    const el = getByAltText('logo');
+    expect(el).not.toBe('symbol');
   });
 });

@@ -12,7 +12,7 @@ const CoinPage = props => {
 
   useEffect(() => {
     getCoin(coinId);
-  }, []);
+  }, [coinId, getCoin]);
 
   // calling the API too frequenty can cause an empty object to return
   if (Object.keys(coin).length === 0 && coin.constructor === Object) {
@@ -121,11 +121,21 @@ const CoinPage = props => {
   );
 };
 
+CoinPage.defaultProps = {
+  coin: {
+    name: 'BTC',
+    market_data: {
+      price_change_24h: 1,
+    },
+    symbol: 'XYZ',
+  },
+};
+
 CoinPage.propTypes = {
   getCoin: PropTypes.func.isRequired,
   coin: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    symbol: PropTypes.string.isRequired,
+    name: PropTypes.string,
+    symbol: PropTypes.string,
     image: PropTypes.shape({
       small: PropTypes.string.isRequired,
     }),
@@ -142,7 +152,7 @@ CoinPage.propTypes = {
       market_cap: PropTypes.shape({
         usd: PropTypes.number.isRequired,
       }),
-      price_change_percentage_24h: PropTypes.number.isRequired,
+      price_change_percentage_24h: PropTypes.number,
       price_change_percentage_7d: PropTypes.number.isRequired,
       price_change_percentage_30d: PropTypes.number.isRequired,
       price_change_percentage_200d: PropTypes.number.isRequired,

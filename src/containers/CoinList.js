@@ -11,7 +11,7 @@ const CoinList = props => {
 
   useEffect(() => {
     props.fetchCoins();
-  }, []);
+  }, [props]);
 
   const handleFilter = filter => {
     props.changeFilter(filter);
@@ -27,7 +27,6 @@ const CoinList = props => {
           .slice(0, 10);
 
   const handleSearch = search => {
-    console.log(filter.search.length);
     props.changeSearch(search);
   };
 
