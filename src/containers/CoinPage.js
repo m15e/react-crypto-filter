@@ -158,7 +158,7 @@ CoinPage.propTypes = {
       price_change_percentage_200d: PropTypes.number.isRequired,
       price_change_percentage_1y: PropTypes.number.isRequired,
     }),
-  }).isRequired,
+  }),
 };
 
 const mapStateToProps = state => ({

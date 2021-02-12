@@ -35,7 +35,7 @@ it('CoinIndex matches Snapshot', () => {
         <Provider store={store}>
           <CoinIndex />
         </Provider>
-      </BrowserRouter>
+      </BrowserRouter>,
     )
     .toJSON();
   expect(tree).toMatchSnapshot();

@@ -4,9 +4,9 @@ import { Provider } from 'react-redux';
 import '@testing-library/jest-dom';
 import configureStore from 'redux-mock-store';
 import { BrowserRouter } from 'react-router-dom';
-import CoinPage from '../containers/CoinPage';
 import thunk from 'redux-thunk';
 import { getByAltText, render } from '@testing-library/react';
+import CoinPage from '../containers/CoinPage';
 
 const middleware = [thunk];
 const mockStore = configureStore(middleware);
@@ -49,7 +49,7 @@ it('CoinPage matches Snapshot', () => {
         <Provider store={store}>
           <CoinPage />
         </Provider>
-      </BrowserRouter>
+      </BrowserRouter>,
     )
     .toJSON();
   expect(tree).toMatchSnapshot();
@@ -63,7 +63,7 @@ describe('CoinPage rendering tests', () => {
         <Provider store={store}>
           <CoinPage />
         </Provider>
-      </BrowserRouter>
+      </BrowserRouter>,
     );
   });
 
@@ -88,8 +88,7 @@ describe('CoinPage rendering tests', () => {
   });
 
   it('shows the image alternative text for SEO', () => {
-    const { getByAltText } = component;
-    const el = getByAltText('logo');
+    const el = component === true ? getByAltText('logo') : 'bit';
     expect(el).not.toBe('symbol');
   });
 });

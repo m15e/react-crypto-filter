@@ -4,8 +4,8 @@ import { Provider } from 'react-redux';
 import '@testing-library/jest-dom';
 import configureStore from 'redux-mock-store';
 import { BrowserRouter } from 'react-router-dom';
-import CoinFilter from '../containers/CoinFilter';
 import { render, fireEvent, screen } from '@testing-library/react';
+import CoinFilter from '../containers/CoinFilter';
 
 const mockStore = configureStore();
 

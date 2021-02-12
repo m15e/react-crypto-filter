@@ -19,21 +19,19 @@ const CoinList = props => {
 
   const sortBy = filterMap(filter);
 
-  const filteredCoins =
-    filter.filter === 'Show All'
-      ? coins
-      : coins
-          .sort((a, b) => parseFloat(b[sortBy]) - parseFloat(a[sortBy]))
-          .slice(0, 10);
+  const filteredCoins = filter.filter === 'Show All'
+    ? coins
+    : coins
+      .sort((a, b) => parseFloat(b[sortBy]) - parseFloat(a[sortBy]))
+      .slice(0, 10);
 
   const handleSearch = search => {
     props.changeSearch(search);
   };
 
-  const searchedCoins =
-    filter.search.length === 0
-      ? filteredCoins
-      : filteredCoins.filter(coin => coin.id.includes(filter.search));
+  const searchedCoins = filter.search.length === 0
+    ? filteredCoins
+    : filteredCoins.filter(coin => coin.id.includes(filter.search));
 
   const coinArr = searchedCoins.map(coin => (
     <Coin
