@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CoinPage matches Snapshot 1`] = `
+<div
+  className="coin-page container"
+>
+  <div
+    className="columns"
+  >
+    <div
+      className="column is-8 coin-page-content"
+    >
+      <div
+        className="columns"
+      >
+        <div
+          className="column is-6"
+        >
+          <img
+            alt="logo"
+            src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png"
+          />
+          <h2
+            className="title is-3"
+          >
+            Bitcoin
+          </h2>
+        </div>
+      </div>
+      <div
+        className="columns"
+      >
+        <div
+          className="column"
+        >
+          <p>
+            <span>
+              Market Capitalization
+            </span>
+            <br />
+            $1.00
+          </p>
+        </div>
+        <div
+          className="column"
+        >
+          <p>
+            <span>
+              Current Price
+            </span>
+            <br />
+            $1.00
+          </p>
+        </div>
+        <div
+          className="column"
+        >
+          <p>
+            <span>
+              All Time High
+            </span>
+            <br />
+            $1.00
+          </p>
+        </div>
+        <div
+          className="column"
+        >
+          <p
+            className="symbol"
+          >
+            <span>
+              Symbol:
+            </span>
+            <br />
+            XYH
+          </p>
+        </div>
+      </div>
+      <div
+        className="columns"
+      >
+        <div
+          className="column pm-title-col"
+        >
+          <strong>
+            Percent Price Movement
+          </strong>
+        </div>
+      </div>
+      <div
+        className="columns price-movement"
+      >
+        <div
+          className="column"
+        >
+          <p>
+            <span>
+              24h
+            </span>
+            <br />
+            12 %
+          </p>
+        </div>
+        <div
+          className="column"
+        >
+          <span>
+            7d
+          </span>
+          <br />
+          12 %
+        </div>
+        <div
+          className="column"
+        >
+          <span>
+            30d
+          </span>
+          <br />
+          12 %
+        </div>
+        <div
+          className="column"
+        >
+          <span>
+            200d
+          </span>
+          <br />
+          12 %
+        </div>
+        <div
+          className="column"
+        >
+          <span>
+            1y
+          </span>
+          <br />
+          12 %
+        </div>
+      </div>
+      <h4
+        className="title is-4"
+      >
+        About
+      </h4>
+      <p>
+        All about coins
+      </p>
+      <a
+        className="back-btn"
+        href="/"
+        onClick={[Function]}
+      >
+        Back to Index
+      </a>
+    </div>
+  </div>
+</div>
+`;

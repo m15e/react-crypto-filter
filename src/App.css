@@ -1,38 +1,72 @@
-.App {
-  text-align: center;
+#root {
+  padding-top: 10vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root::before {
+  content: 'CryptoScan';
+  font-family: 'Lexend Mega', sans-serif;
+  font-size: 2rem;
+  position: absolute;
+  left: 40.5vw;
+  top: 3vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.tile.is-4 {
+  float: left;
+  border-radius: 0;
+  padding: 20px;
+  width: 30.33333%;
+  margin: 5px !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.filter-container {
+  margin: 15px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.filter-container p {
+  float: right;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.coin-container {
+  margin-left: 5vw;
+}
+
+.coin figure {
+  float: right;
+}
+
+.coin h3 {
+  margin: 5px 0 15px;
+}
+
+.coin span {
+  font-size: 12px;
+}
+
+.coin .view-coin {
+  float: right;
+}
+
+.coin-page-content {
+  margin: 5vh auto;
+}
+
+.coin-page-content .pm-title-col {
+  padding: 0 0.75rem;
+}
+
+.coin-page-content .price-movement span {
+  text-align: right;
+}
+
+.coin-page-content .back-btn {
+  position: fixed;
+  top: 5vh;
+  right: 5vw;
+}
+
+@media screen and (max-width: 1000px) {
+  .tile.is-4 {
+    width: 50%;
   }
 }
